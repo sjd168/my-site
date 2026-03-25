@@ -2,14 +2,19 @@ import Link from "next/link";
 
 import { getAllPosts } from "@/lib/posts";
 
-export default function Home() {
+export const metadata = {
+  title: "Blog",
+};
+
+export default function BlogIndexPage() {
   const posts = getAllPosts();
+
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-16">
       <header className="mb-10">
-        <h1 className="text-3xl font-semibold tracking-tight">文章列表</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
         <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-          我会把学习笔记和踩坑记录在这里。
+          记录学习、踩坑和一些想法。
         </p>
       </header>
 
@@ -31,6 +36,18 @@ export default function Home() {
                   {p.description}
                 </p>
               ) : null}
+              {p.tags?.length ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full bg-black/[.04] px-3 py-1 text-xs text-zinc-700 dark:bg-white/[.08] dark:text-zinc-200"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </li>
         ))}
@@ -40,13 +57,7 @@ export default function Home() {
         <p className="mt-10 text-zinc-600 dark:text-zinc-400">
           还没有文章。你可以在 `content/posts/` 新建一个 `.md` 文件。
         </p>
-      ) : (
-        <div className="mt-10">
-          <Link className="text-sm text-zinc-600 hover:underline" href="/blog">
-            去 Blog 页查看更多 →
-          </Link>
-        </div>
-      )}
+      ) : null}
     </div>
   );
 }
