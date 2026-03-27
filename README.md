@@ -35,26 +35,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Mini Program (Taro)
-
-This repo now includes a `miniapp` project for WeChat Mini Program.
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Build blog data from `content/posts/*.md`:
-
-```bash
-npm run miniapp:data
-```
-
-3. Start WeChat mini program build watch:
-
-```bash
-npm run miniapp:dev
-```
-
-4. In WeChat DevTools, import `miniapp/project.config.json`, and set appid.

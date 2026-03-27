@@ -1,6 +1,0 @@
-packages:
-  - miniapp
-
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
