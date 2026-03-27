@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "miniapp:dev": "npm --prefix miniapp run dev:weapp",
+    "miniapp:build": "npm --prefix miniapp run build:weapp",
+    "miniapp:data": "npm --prefix miniapp run predev:weapp"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
